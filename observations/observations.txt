@@ -1,0 +1,47 @@
+================================================================================
+SMISHING INVESTIGATION CHRONOLOGICAL OBSERVATIONS LOG
+================================================================================
+Case ID: INC-2026-0513
+Target Campaign: Coordinated Financial Alert Smishing
+Threat Type: SMS Phishing (Smishing) / Disposable Phishing Infrastructure
+Investigator: Threat Intelligence / SOC Team
+Date of Investigation: May 13 - 26, 2026
+
+--------------------------------------------------------------------------------
+TIMELINE OF EVENTS (UTC+5:30)
+--------------------------------------------------------------------------------
+
+2026-05-13 14:30 : Detection & Alert. Suspicious SMS messages reported containing urgency-based financial lures (e.g., account credits, urgent alerts) directing users to several newly registered domains: `xm87.xyz`, `nd33.xyz`, `re13.xyz`, and `lk94.top`.
+
+2026-05-13 15:00 : Passive WHOIS reconnaissance initiated for all target domains.
+  - Determined that the domains `xm87.xyz`, `nd33.xyz`, `re13.xyz`, and `lk94.top` were registered bulk-style within seconds of each other on Spaceship, Inc. (Creation window: 13:04:51 to 13:05:03 UTC).
+  - All domains reuse the same Cloudflare authoritative name servers: `aron.ns.cloudflare.com` and `josh.ns.cloudflare.com`.
+
+2026-05-13 15:45 : DNS lookup operations performed.
+  - Confirmed active resolution for all domains using standard DNS servers.
+  - All domains resolve to Cloudflare IP blocks (`104.21.x.x` and `172.67.x.x`), masking the backend origin servers.
+
+2026-05-13 16:30 : HTTP header and payload triage (CURL/URLScan).
+  - Web service analysis returned a consistent `HTTP/1.1 204 No Content` response code across all domains.
+  - Zero webpage content was exposed during automated analysis scans. This indicates sandbox/analysis evasion behavior, or conditional payload delivery targeting mobile-only user agents.
+
+2026-05-13 17:15 : VirusTotal queries compiled.
+  - `xm87.xyz` flagged as Phishing by ESET detection engine.
+  - The remaining domains (`nd33.xyz`, `re13.xyz`, `lk94.top`) returned 0/91 detections, confirming typical early-stage evasion of newly registered domains.
+  - Let's Encrypt certificates observed across all domains, sharing identical issuance timelines.
+
+2026-05-13 18:00 : Internal Blocklist Application.
+  - Logged all 4 domains, 8 resolved IP addresses, and nameservers in the corporate Secure Web Gateway (SWG).
+  - Formulated custom detection rules targeting newly registered domains returning HTTP 204 headers associated with Cloudflare.
+
+2026-05-26 09:30 : External Takedown Operations.
+  - Filed abuse notifications with Registrar Spaceship, Inc. for violating TOS.
+  - Submitted phishing alerts to Cloudflare Abuse to intercept the CDN proxying layers.
+
+--------------------------------------------------------------------------------
+GENERAL OBSERVATIONS & NOTES
+--------------------------------------------------------------------------------
+1. Infrastructure Reuse: The threat actor utilized bulk registration techniques, obtaining four domains in under 12 seconds. Reusing nameservers, registrars, and SSL issuers creates a strong correlation vector.
+2. Evasion Strategy: Servicing HTTP 204 No Content helps bypass automated crawler detection and analysis tools. If security engines do not receive HTML bodies, they fail to classify the sites as malicious, allowing the threat to persist.
+3. Distribution Vector: The campaign relied on mobile social engineering tactics (SMS text alerts). These bypass traditional email filters and exploit the absence of native browser threat protections on some mobile OS configurations.
+

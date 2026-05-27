@@ -1,0 +1,17 @@
+indicator,type,description,severity,tags
+xm87[.]xyz,domain,Smishing landing page - financial lure,high,campaign_may2026;spaceship
+nd33[.]xyz,domain,Smishing landing page - financial lure,high,campaign_may2026;spaceship
+re13[.]xyz,domain,Smishing landing page - financial lure,high,campaign_may2026;spaceship
+lk94[.]top,domain,Smishing landing page - financial lure,high,campaign_may2026;spaceship
+104.21.54[.]81,ip,Cloudflare Anycast Proxy IP (xm87.xyz),medium,proxy;cloudflare
+172.67.136[.]199,ip,Cloudflare Anycast Proxy IP (xm87.xyz),medium,proxy;cloudflare
+104.21.43[.]80,ip,Cloudflare Anycast Proxy IP (nd33.xyz),medium,proxy;cloudflare
+172.67.176[.]244,ip,Cloudflare Anycast Proxy IP (nd33.xyz),medium,proxy;cloudflare
+104.21.26[.]225,ip,Cloudflare Anycast Proxy IP (re13.xyz),medium,proxy;cloudflare
+172.67.139[.]121,ip,Cloudflare Anycast Proxy IP (re13.xyz),medium,proxy;cloudflare
+104.21.90[.]220,ip,Cloudflare Anycast Proxy IP (lk94.top),medium,proxy;cloudflare
+172.67.205[.]141,ip,Cloudflare Anycast Proxy IP (lk94.top),medium,proxy;cloudflare
+CR-Alert,sms_header,Financial alert smishing sender header,high,lure;sms
+TX-CREDIT,sms_header,Financial alert smishing sender header,high,lure;sms
+VM-PAYREF,sms_header,Financial alert smishing sender header,high,lure;sms
+AD-ACNTCR,sms_header,Financial alert smishing sender header,high,lure;sms

@@ -1,0 +1,48 @@
+================================================================================
+EXECUTIVE SUMMARY: INCIDENT INC-2026-0513
+================================================================================
+Date: May 26, 2026
+To: Executive Leadership / Chief Information Security Officer (CISO)
+Subject: Impersonation Attack - Coordinated Financial Smishing Campaign
+Severity: HIGH (Mitigated)
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE BRIEF
+--------------------------------------------------------------------------------
+On May 13, 2026, the cybersecurity team detected and responded to an active smishing (SMS-based phishing) campaign targeting mobile phone users. The attack utilized bulk-registered disposable domains under cheap TLDs (`.xyz`, `.top`) to deliver fake financial notifications and credits to victim devices.
+
+The investigated infrastructure consists of four primary domains:
+`xm87.xyz`, `nd33.xyz`, `re13.xyz`, and `lk94.top`
+
+These domains utilize Cloudflare proxies to mask their host environment and return HTTP 204 No Content responses to automated analysis platforms, actively evading traditional domain scanning engines.
+
+--------------------------------------------------------------------------------
+2. KEY BUSINESS IMPACTS
+--------------------------------------------------------------------------------
+- **Threat Vector**: Direct SMS lure links bypassing boundary corporate email protection gateways.
+- **Risk Level**: High potential for credential theft and financial fraud if employees interact with the phishing payload on mobile web interfaces.
+- **Evasion Posture**: The HTTP 204 response behavior effectively blinded standard automated analysis crawlers, meaning early-stage detection was bypassed for all domains except one (flagged by ESET).
+
+--------------------------------------------------------------------------------
+3. TIMELINE & RESPONSE METRICS
+--------------------------------------------------------------------------------
+- **Campaign Infrastructure Launch**: May 13, 2026, 13:04 to 13:05 UTC (Bulk domains registered in a 12-second window).
+- **Incident Detected**: May 13, 2026, 14:30.
+- **Internal Domain Blocking Applied**: May 13, 2026, 18:00 (SWG policy block active).
+- **External Abuse Notifications Filed**: May 26, 2026 (Submitted to registrar Spaceship, Inc. and CDN Cloudflare).
+
+--------------------------------------------------------------------------------
+4. KEY MITIGATION ACTIONS COMPLETED
+--------------------------------------------------------------------------------
+- **DNS Sinkholing**: Configured local DNS blocks to prevent resolution of all four threat domains.
+- **Outbound HTTP 204 Rule**: Deployed rules on corporate web gateways to alert on outbound connections returning HTTP 204 codes when requesting newly registered `.xyz` and `.top` domains fronted by Cloudflare.
+- **Registrar Notification**: Triggered official TOS violation complaints with Spaceship, Inc. for domain suspensions.
+
+--------------------------------------------------------------------------------
+5. RECOMMENDATIONS FOR EXECUTIVE ACTIONS
+--------------------------------------------------------------------------------
+1. **Newly Registered Domain Policy**: Enforce strict gateway policies that block or quarantine traffic directed to domains under 30 days old.
+2. **Endpoint Mobile Security**: Deploy and verify mobile threat defense (MTD) agents on corporate mobile endpoints to inspect incoming SMS links.
+3. **MFA Enforcement**: Ensure all financial and corporate portals enforce Phishing-Resistant MFA (e.g., FIDO2/WebAuthn tokens) to protect credentials even if harvested by smishing kits.
+================================================================================
+

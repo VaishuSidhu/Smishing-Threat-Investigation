@@ -1,0 +1,188 @@
+================================================================================
+URLSCAN.IO RECONNAISSANCE ANALYSIS
+================================================================================
+--------------------------------------------------
+Domain: xm87.xyz
+--------------------------------------------------
+
+Submitted URL:
+http://xm87.xyz/
+
+Effective URL:
+https://xm87.xyz/
+
+Verdict:
+No classification
+
+Domain Age:
+13 days old
+
+Main IP:
+188.114.97.3
+
+Hosting Provider:
+Cloudflare Inc. (AS13335)
+
+HTTP Transactions:
+1
+
+Countries Contacted:
+1
+
+TLS Certificate:
+Issued by E7
+Validity: 3 months
+Issued on: May 13 2026
+
+Observations:
+- Domain uses Cloudflare infrastructure
+- Very low HTTP activity
+- Minimal webpage behavior observed
+- No visible phishing page during scan
+- Likely conditional delivery or redirect-based phishing
+- Newly registered suspicious domain
+
+
+--------------------------------------------------
+Domain: nd33.xyz
+--------------------------------------------------
+
+Submitted URL:
+http://nd33.xyz/
+
+Effective URL:
+https://nd33.xyz/
+
+Verdict:
+No classification
+
+Domain Age:
+13 days old
+
+Main IP:
+172.67.176.244
+
+Hosting Provider:
+Cloudflare Inc. (AS13335)
+
+HTTP Transactions:
+1
+
+Countries Contacted:
+1
+
+TLS Certificate:
+Issued by E8
+Validity: 3 months
+Issued on: May 13 2026
+
+Observations:
+- Uses same Cloudflare infrastructure pattern
+- Similar registration timing
+- Similar TLS validity period
+- Minimal webpage behavior
+- Possibly part of same phishing campaign
+- No active content shown during scan
+
+
+--------------------------------------------------
+Domain: re13.xyz
+--------------------------------------------------
+
+Submitted URL:
+http://re13.xyz/
+
+Effective URL:
+https://re13.xyz/
+
+Verdict:
+No classification
+
+Domain Age:
+13 days old
+
+Main IP:
+188.114.97.3
+
+Hosting Provider:
+Cloudflare Inc. (AS13335)
+
+HTTP Transactions:
+1
+
+Countries Contacted:
+1
+
+TLS Certificate:
+Issued by E7
+Validity: 3 months
+Issued on: May 13 2026
+
+Observations:
+- Shares infrastructure similarity with xm87.xyz
+- Same Cloudflare ASN
+- Same TLS issuer pattern
+- Minimal web behavior
+- Suspicious domain registration timing
+- Possible phishing redirect node
+
+
+--------------------------------------------------
+Domain: lk94.top
+--------------------------------------------------
+
+Submitted URL:
+http://lk94.top/
+
+Effective URL:
+https://lk94.top/
+
+Verdict:
+No classification
+
+Domain Age:
+13 days old
+
+Main IP:
+104.21.90.220
+
+Hosting Provider:
+Cloudflare Inc. (AS13335)
+
+HTTP Transactions:
+1
+
+Countries Contacted:
+1
+
+TLS Certificate:
+Issued by E7
+Validity: 3 months
+Issued on: May 13 2026
+
+Observations:
+- Uses same infrastructure pattern
+- Cloudflare-protected hosting
+- Minimal traffic behavior
+- Newly registered suspicious domain
+- Similar phishing SMS campaign indicators
+- Likely linked to same actor infrastructure
+
+
+==================================================
+INFRASTRUCTURE CORRELATION ANALYSIS
+==================================================
+
+Common Indicators Observed:
+- All domains recently registered
+- Similar naming structure
+- Similar phishing SMS format
+- Same Cloudflare ASN (AS13335)
+- Similar TLS issuance timing
+- Similar 3-month certificate validity
+- Minimal HTTP activity
+- No legitimate website content
+- Domains likely used for smishing campaigns
+
+Conclusion:
+The analyzed domains show strong infrastructure correlation and are highly likely part of a coordinated smishing/phishing campaign using rapidly deployed disposable domains behind Cloudflare infrastructure.

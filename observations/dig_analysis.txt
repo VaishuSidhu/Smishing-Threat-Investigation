@@ -1,0 +1,115 @@
+================================================================================
+DIG UTILITY OUTPUT & ANALYSIS
+================================================================================
+Objective:
+Perform DNS metadata analysis on suspicious domains to identify infrastructure behavior, TTL characteristics, operational status, and infrastructure correlation indicators.
+
+--------------------------------------------------
+DIG ANALYSIS — xm87.xyz
+--------------------------------------------------
+
+Status:NOERROR
+
+TTL:96
+
+A Records:
+- 172.67.136.199
+- 104.21.54.81
+
+Query Time:
+4 msec
+
+Observations:
+- Domain successfully resolved during analysis.
+- Active DNS infrastructure confirmed.
+- Low TTL value observed.
+- Cloudflare-associated IP ranges identified.
+- Fast DNS response time detected.
+
+--------------------------------------------------
+DIG ANALYSIS — nd33.xyz
+--------------------------------------------------
+
+Status:NOERROR
+
+TTL:124
+
+A Records:
+- 172.67.176.244
+- 104.21.43.80
+
+Query Time:
+8 msec
+
+Observations:
+- Active operational domain detected.
+- Similar Cloudflare infrastructure identified.
+- TTL behavior closely matches other campaign domains.
+- Consistent DNS response structure observed.
+
+--------------------------------------------------
+DIG ANALYSIS — re13.xyz
+--------------------------------------------------
+
+Status:NOERROR
+
+TTL:158
+
+A Records:
+- 172.67.139.121
+- 104.21.26.225
+
+Query Time:
+4 msec
+
+Observations:
+- Successful DNS resolution observed.
+- Similar infrastructure behavior detected.
+- Multiple Cloudflare-associated IP ranges identified.
+- DNS configuration patterns consistent with campaign infrastructure.
+
+--------------------------------------------------
+DIG ANALYSIS — lk94.top
+--------------------------------------------------
+
+Status:NOERROR
+
+TTL:168
+
+A Records:
+- 172.67.205.141
+- 104.21.90.220
+
+Query Time:
+4 msec
+
+Observations:
+- Domain actively operational during investigation.
+- Similar DNS architecture observed.
+- Cloudflare proxy/CDN infrastructure detected.
+- TTL values consistent with other analyzed domains.
+
+--------------------------------------------------
+CORRELATION FINDINGS
+--------------------------------------------------
+
+Shared Indicators:
+- All domains returned status NOERROR.
+- Similar low TTL values observed across domains.
+- Consistent Cloudflare-associated IP ranges identified.
+- Similar DNS response structure detected.
+- Fast DNS query response times observed.
+
+Infrastructure Patterns:
+- Repeated 104.21.x.x IP ranges identified.
+- Repeated 172.67.x.x IP ranges identified.
+- Similar operational DNS behavior observed across all domains.
+
+Technical Assessment:
+The domains demonstrated highly consistent DNS infrastructure characteristics, suggesting centralized or coordinated infrastructure deployment. Similar TTL values and repeated Cloudflare-associated ranges support the hypothesis of shared phishing infrastructure.
+
+Risk Level:
+High
+
+Conclusion:
+The DIG analysis confirmed active DNS infrastructure and revealed strong infrastructure similarities across all analyzed domains. Consistent operational behavior, low TTL values, and repeated Cloudflare-associated IP ranges strongly support the identification of a coordinated smishing campaign.

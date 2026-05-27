@@ -1,0 +1,130 @@
+================================================================================
+HTTP HEADER ANALYSIS LOG (CURL READOUT)
+================================================================================
+------------------------------------------------
+Domain: xm87.xyz
+--------------------------------------------------
+
+HTTP Response:
+204 No Content
+
+Server:
+cloudflare
+
+Cloudflare Ray ID:
+a01deb5f3820f93b-SIN
+
+Observed Headers:
+- Report-To
+- NEL
+- alt-svc
+
+Observations:
+- Server intentionally returns empty response
+- No webpage content delivered
+- Cloudflare CDN protection enabled
+- Response designed to avoid detection
+- 204 status often used in disposable phishing infrastructure
+- Presence of NEL and Report-To indicates Cloudflare telemetry
+
+
+--------------------------------------------------
+Domain: nd33.xyz
+--------------------------------------------------
+
+HTTP Response:
+204 No Content
+
+Server:
+cloudflare
+
+Cloudflare Ray ID:
+a01debc8e9d5a3ef-SIN
+
+Observed Headers:
+- Report-To
+- NEL
+- alt-svc
+
+Observations:
+- Empty response behavior identical to xm87.xyz
+- Same infrastructure pattern
+- Likely controlled by same threat actor
+- No visible content served
+- Cloudflare masking backend infrastructure
+
+
+--------------------------------------------------
+Domain: re13.xyz
+--------------------------------------------------
+
+HTTP Response:
+204 No Content
+
+Server:
+cloudflare
+
+Cloudflare Ray ID:
+a01dec390f7ff8d6-SIN
+
+Observed Headers:
+- Report-To
+- NEL
+- alt-svc
+
+Observations:
+- Same HTTP response pattern observed
+- Minimal infrastructure exposure
+- Domain likely used for temporary redirect operations
+- Consistent with smishing campaign behavior
+
+
+--------------------------------------------------
+Domain: lk94.top
+--------------------------------------------------
+
+HTTP Response:
+204 No Content
+
+Server:
+cloudflare
+
+Cloudflare Ray ID:
+a01dec9078c59c33-SIN
+
+Observed Headers:
+- Report-To
+- NEL
+- alt-svc
+
+Observations:
+- Same response fingerprint as other domains
+- Cloudflare used as protective reverse proxy
+- No active content exposed publicly
+- Possible conditional phishing delivery
+
+
+==================================================
+OVERALL HEADER ANALYSIS
+==================================================
+
+Common Indicators:
+- All domains return HTTP 204 responses
+- All domains use Cloudflare infrastructure
+- Similar response headers observed
+- No webpage content exposed
+- Similar anti-analysis behavior
+- Minimal fingerprinting surface
+
+Threat Assessment:
+The domains appear intentionally configured to minimize exposure during automated analysis while remaining functional for targeted smishing operations.
+
+Possible Threat Actor Behavior:
+- Disposable phishing domains
+- Conditional payload delivery
+- SMS-triggered phishing infrastructure
+- Cloudflare-backed anonymity
+- Fast-rotation campaign setup
+
+Conclusion:
+The infrastructure pattern strongly suggests coordinated smishing/phishing operations using recently registered disposable domains hidden behind Cloudflare CDN infrastructure.

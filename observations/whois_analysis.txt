@@ -1,0 +1,146 @@
+================================================================================
+WHOIS ANALYSIS REPORT
+================================================================================
+Objective:
+Analyze domain registration details and identify infrastructure correlation indicators associated with the smishing campaign.
+--------------------------------------------------
+WHOIS ANALYSIS — xm87.xyz
+--------------------------------------------------
+
+Domain Name:
+XM87.XYZ
+
+Registrar:
+Spaceship, Inc.
+
+Creation Date:
+2026-05-13 13:04:51 UTC
+
+Expiry Date:
+2027-05-13
+
+Nameservers:
+- ARON.NS.CLOUDFLARE.COM
+- JOSH.NS.CLOUDFLARE.COM
+
+DNSSEC:
+Unsigned
+
+Observations:
+- Domain was recently registered.
+- Randomized domain naming pattern observed.
+- Cloudflare nameservers detected.
+- Domain appears consistent with disposable phishing infrastructure.
+- Registrar and nameserver reuse identified.
+
+--------------------------------------------------
+WHOIS ANALYSIS — nd33.xyz
+--------------------------------------------------
+
+Domain Name:
+ND33.XYZ
+
+Registrar:
+Spaceship, Inc.
+
+Creation Date:
+2026-05-13 13:05:03 UTC
+
+Expiry Date:
+2027-05-13
+
+Nameservers:
+- ARON.NS.CLOUDFLARE.COM
+- JOSH.NS.CLOUDFLARE.COM
+
+DNSSEC:
+Unsigned
+
+Observations:
+- Domain was registered approximately 12 seconds after xm87.xyz.
+- Same registrar and nameservers identified.
+- Similar randomized naming convention observed.
+- Strong infrastructure correlation detected.
+
+--------------------------------------------------
+WHOIS ANALYSIS — re13.xyz
+--------------------------------------------------
+
+Domain Name:
+RE13.XYZ
+
+Registrar:
+Spaceship, Inc.
+
+Creation Date:
+2026-05-13 13:05:03 UTC
+
+Expiry Date:
+2027-05-13
+
+Nameservers:
+- ARON.NS.CLOUDFLARE.COM
+- JOSH.NS.CLOUDFLARE.COM
+
+DNSSEC:
+Unsigned
+
+Observations:
+- Same registration timestamp as nd33.xyz.
+- Shared registrar and Cloudflare nameservers detected.
+- Consistent phishing infrastructure characteristics observed.
+- Bulk registration behavior strongly suspected.
+
+--------------------------------------------------
+WHOIS ANALYSIS — lk94.top
+--------------------------------------------------
+
+Domain Name:
+lk94.top
+
+Registrar:
+Spaceship, Inc.
+
+Creation Date:
+2026-05-13 13:04:58 UTC
+
+Expiry Date:
+2027-05-13
+
+Nameservers:
+- aron.ns.cloudflare.com
+- josh.ns.cloudflare.com
+
+DNSSEC:
+Unsigned
+
+Registrant Information:
+Redacted for privacy
+
+Observations:
+- Domain creation timing closely matches the .xyz domains.
+- Same registrar and nameservers reused.
+- Different TLD (.top) used within same campaign.
+- Privacy-protected registration observed.
+- Infrastructure reuse strongly suggests coordinated campaign operations.
+
+--------------------------------------------------
+CORRELATION FINDINGS
+--------------------------------------------------
+
+Shared Indicators:
+- Same registrar (Spaceship, Inc.)
+- Same Cloudflare nameservers
+- Similar randomized naming patterns
+- Registration timestamps within seconds
+- DNSSEC unsigned across all domains
+
+Assessment:
+The WHOIS findings strongly suggest that all analyzed domains belong to the same coordinated smishing infrastructure and were likely registered in bulk using automated methods.
+
+Risk Level:
+High
+
+Conclusion:
+The analyzed domains exhibit multiple characteristics commonly associated with phishing and smishing campaigns, including recent registration dates, infrastructure reuse, randomized naming conventions, and coordinated registration timing.
+

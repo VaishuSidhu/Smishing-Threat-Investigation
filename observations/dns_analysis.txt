@@ -1,0 +1,111 @@
+================================================================================
+DNS RECORD ANALYSIS
+================================================================================
+Objective:
+Perform DNS analysis on suspicious domains identified from smishing SMS messages to determine infrastructure behavior, active resolution status, and correlation indicators.
+
+--------------------------------------------------
+DNS ANALYSIS — xm87.xyz
+--------------------------------------------------
+
+DNS Server Used:
+192.168.1.1
+
+IPv4 Addresses:
+- 104.21.54.81
+- 172.67.136.199
+
+IPv6 Addresses:
+- 2606:4700:3036::ac43:88c7
+- 2606:4700:3033::6815:3651
+
+Observations:
+- Active DNS resolution confirmed.
+- Multiple IPv4 and IPv6 records identified.
+- Infrastructure associated with Cloudflare ranges.
+- Distributed proxy/CDN behavior observed.
+
+--------------------------------------------------
+DNS ANALYSIS — nd33.xyz
+--------------------------------------------------
+
+DNS Server Used:
+192.168.1.1
+
+IPv4 Addresses:
+- 104.21.43.80
+- 172.67.176.244
+
+IPv6 Addresses:
+- 2606:4700:3036::6815:2b50
+- 2606:4700:3035::ac43:b0f4
+
+Observations:
+- Successful DNS resolution observed.
+- Similar Cloudflare-backed infrastructure identified.
+- Infrastructure behavior closely matches xm87.xyz.
+
+--------------------------------------------------
+DNS ANALYSIS — re13.xyz
+--------------------------------------------------
+
+DNS Server Used:
+192.168.1.1
+
+IPv4 Addresses:
+- 104.21.26.225
+- 172.67.139.121
+
+IPv6 Addresses:
+- 2606:4700:3035::6815:1ae1
+- 2606:4700:3033::ac43:8b79
+
+Observations:
+- Domain actively resolving during analysis.
+- Cloudflare infrastructure ranges detected.
+- Similar DNS behavior observed across campaign domains.
+
+--------------------------------------------------
+DNS ANALYSIS — lk94.top
+--------------------------------------------------
+
+DNS Server Used:
+192.168.1.1
+
+IPv4 Addresses:
+- 104.21.90.220
+- 172.67.205.141
+
+IPv6 Addresses:
+- 2606:4700:3033::6815:5adc
+- 2606:4700:3033::ac43:cd8d
+
+Observations:
+- Successful DNS resolution confirmed.
+- Same infrastructure pattern observed.
+- Similar CDN/proxy architecture detected.
+
+--------------------------------------------------
+CORRELATION FINDINGS
+--------------------------------------------------
+
+Shared Indicators:
+- All domains resolved successfully.
+- Similar Cloudflare-associated IP ranges observed.
+- Multiple IPv4 and IPv6 records returned for each domain.
+- Consistent proxy/CDN infrastructure behavior identified.
+- Similar DNS response structure across all domains.
+
+Infrastructure Patterns:
+- 104.21.x.x ranges repeatedly observed.
+- 172.67.x.x ranges repeatedly observed.
+- Cloudflare IPv6 ranges consistently present.
+
+Assessment:
+The DNS analysis strongly suggests coordinated infrastructure usage across all analyzed domains. Similar resolution patterns and repeated Cloudflare-associated IP ranges indicate centralized or automated phishing infrastructure deployment.
+
+Risk Level:
+High
+
+Conclusion:
+All analyzed domains demonstrated active DNS resolution and highly similar infrastructure characteristics. Shared Cloudflare-backed infrastructure patterns further support the hypothesis of a coordinated financial smishing campaign.

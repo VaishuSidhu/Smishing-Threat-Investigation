@@ -1,0 +1,53 @@
+title: Outbound DNS Connections to Coordinated Smishing Campaign Domains
+id: 5b741ef0-032a-4db3-ae09-24cc3c89659a
+status: experimental
+description: Detects lookup queries to domains associated with a coordinated financial smishing campaign (xm87.xyz, nd33.xyz, re13.xyz, lk94.top) registered on Spaceship, Inc.
+references:
+    - Internal Case INC-2026-0513
+author: Threat Intelligence Team
+date: 2026/05/27
+tags:
+    - attack.initial_access
+    - attack.t1566.002
+logsource:
+    category: dns
+    product: windows
+detection:
+    selection:
+        QueryName|endswith:
+            - '.xm87.xyz'
+            - 'xm87.xyz'
+            - '.nd33.xyz'
+            - 'nd33.xyz'
+            - '.re13.xyz'
+            - 're13.xyz'
+            - '.lk94.top'
+            - 'lk94.top'
+    condition: selection
+falsepositives:
+    - Legitimate connections (highly unlikely for these threat indicators)
+level: high
+---
+title: Outbound Web Request with Evasion HTTP 204 to Cloudflare
+id: c48a529a-2451-419b-a320-1b20dfa7b973
+status: experimental
+description: Detects outbound HTTP connections requesting files or homepages under low-reputation top-level domains (.xyz, .top) that return an HTTP 204 response from Cloudflare, indicating proxy-fronted payload evasion.
+references:
+    - Internal Case INC-2026-0513
+author: Threat Intelligence Team
+date: 2026/05/27
+tags:
+    - attack.defense_evasion
+    - attack.t1564.004
+logsource:
+    category: webserver
+    product: proxy
+detection:
+    selection:
+        url|re: '.*://.*\.(xyz|top)/?.*'
+        http_status: 204
+        http_server_header|contains: 'cloudflare'
+    condition: selection
+falsepositives:
+    - Legitimate APIs running on Cloudflare utilizing .xyz or .top TLDs and returning empty 204 codes.
+level: medium

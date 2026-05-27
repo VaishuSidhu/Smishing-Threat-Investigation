@@ -1,0 +1,9 @@
+# Coordinated Smishing Campaign Sender IDs
+# Format: Sender Header [Region/Target]
+
+CR-Alert [Financial Alert Lure]
+TX-CREDIT [Fake Credit Notification]
+VM-PAYREF [Urgent Payment Reference]
+AD-ACNTCR [Account Credit Update]
++919876543210 [Fallback SMS Virtual Number]
++918765432109 [Fallback SMS Virtual Number]

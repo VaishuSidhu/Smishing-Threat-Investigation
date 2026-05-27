@@ -1,0 +1,40 @@
+================================================================================
+INVESTIGATION COMMAND-LINE HISTORY REFERENCE
+================================================================================
+Below is a log of command-line tools utilized by the incident response team to perform DNS lookup, WHOIS checks, HTTP header analysis, and origin server validation.
+--------------------------------------------------------------------------------
+1. WHOIS REGISTRY QUERY
+--------------------------------------------------------------------------------
+whois xm87.xyz > whois_xm87.txt
+whois nd33.xyz > whois_nd33.txt
+whois re13.xyz > whois_re13.txt
+whois lk94.top > whois_lk94.txt
+--------------------------------------------------------------------------------
+2. DNS RECONNAISSANCE (DIG)
+--------------------------------------------------------------------------------
+nslookup xm87.xyz > dns_xm87.txt
+nslookup nd33.xyz > dns_nd33.txt
+nslookup re13.xyz > dns_re13.txt
+nslookup lk94.top > dns_lk94.txt
+--------------------------------------------------------------------------------
+3. DIG ANALYSIS
+--------------------------------------------------------------------------------
+dig xm87.xyz > dig_xm87.txt
+dig nd33.xyz > dig_nd33.txt
+dig re13.xyz > dig_re13.txt
+dig lk94.top > dig_lk94.txt
+--------------------------------------------------------------------------------
+4. HTTP HEADER ANALYSIS (CURL)
+--------------------------------------------------------------------------------
+curl -I http://xm87.xyz > headers_xm87.txt
+curl -I http://nd33.xyz > headers_nd33.txt
+curl -I http://re13.xyz > headers_re13.txt
+curl -I http://lk94.top > headers_lk94.txt
+--------------------------------------------------------------------------------
+5. VIRUS TOTAL
+--------------------------------------------------------------------------------
+https://www.virustotal.com
+--------------------------------------------------------------------------------
+6. URLSCAN.IO
+--------------------------------------------------------------------------------
+https://urlscan.io/

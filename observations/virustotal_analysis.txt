@@ -1,0 +1,222 @@
+================================================================================
+VIRUSTOTAL ANALYSIS REPORT
+================================================================================
+Objective:
+Analyze suspicious domains using VirusTotal to identify phishing detections, infrastructure behavior, HTTP responses, SSL certificates, DNS replication, and reputation indicators associated with the smishing campaign.
+
+--------------------------------------------------
+VIRUSTOTAL ANALYSIS — xm87.xyz
+--------------------------------------------------
+
+Detection Ratio:
+1/92 vendors flagged malicious
+
+Detected By:
+- ESET -> Phishing
+
+HTTP Status:
+204 No Content
+
+Category:
+- Newly Registered Websites
+
+Serving IP:
+104.21.54.81
+
+Infrastructure:
+- Cloudflare detected
+- Cloudflare headers observed
+
+Observed Headers:
+- server: cloudflare
+- cf-ray
+- report-to
+- nel
+
+Community Score:
+1/92
+
+Observations:
+- Domain identified as phishing by ESET.
+- HTTP 204 response detected.
+- Infrastructure protected behind Cloudflare.
+- Newly registered domain category observed.
+- Low detection count suggests fresh phishing infrastructure.
+
+Technical Assessment:
+The HTTP 204 response may indicate:
+- anti-analysis behavior
+- conditional content delivery
+- mobile-targeted phishing behavior
+- scanner evasion mechanisms
+
+--------------------------------------------------
+VIRUSTOTAL ANALYSIS — nd33.xyz
+--------------------------------------------------
+
+Detection Ratio:
+0/91 vendors flagged malicious
+
+Last Analysis:
+8 days ago
+
+DNS Records:
+- 172.67.176.244
+- 104.21.43.80
+
+Nameservers:
+- aron.ns.cloudflare.com
+- josh.ns.cloudflare.com
+
+SSL Certificate:
+- Let's Encrypt certificate observed
+- Issuer: E8
+- Subject: CN=nd33.xyz
+
+Certificate Validity:
+2026-05-13 -> 2026-08-11
+
+Passive DNS Replication:
+- 172.67.176.244
+- 104.21.43.80
+- Historical IP: 47.91.170.222
+
+Historical Findings:
+- Historical detections observed on previous IP infrastructure
+- Shared infrastructure indicators detected
+
+Additional Observations:
+- Google indexing traces observed
+- SMS-style phishing content indexed
+- Similar phishing lure patterns identified
+
+Community Score:
+0/91
+
+Observations:
+- Domain currently undetected by most vendors.
+- Fresh phishing infrastructure suspected.
+- Shared Cloudflare infrastructure identified.
+- Historical infrastructure overlap detected.
+
+Technical Assessment:
+Low detection rates do not indicate safety. Newly created phishing domains often evade detection during early operational stages.
+
+--------------------------------------------------
+VIRUSTOTAL ANALYSIS — re13.xyz
+--------------------------------------------------
+
+Detection Ratio:
+0/91 vendors flagged malicious
+
+Registrar:
+Spaceship, Inc.
+
+Creation Timeline:
+13 days old
+
+DNS Records:
+- 172.67.139.121
+- 104.21.26.225
+
+Nameservers:
+- aron.ns.cloudflare.com
+- josh.ns.cloudflare.com
+
+SSL Certificate:
+- Let's Encrypt certificate observed
+- Issuer: E7
+- Subject: CN=re13.xyz
+
+Certificate Validity:
+2026-05-13 -> 2026-08-11
+
+Passive DNS Findings:
+- Shared Cloudflare infrastructure detected
+- Similar DNS replication patterns observed
+
+Historical WHOIS Findings:
+- Registrar: Spaceship, Inc.
+
+Community Score:
+0/91
+
+Observations:
+- Similar infrastructure behavior observed.
+- Shared DNS architecture detected.
+- Fresh infrastructure with limited reputation coverage identified.
+- Strong campaign correlation indicators present.
+
+--------------------------------------------------
+VIRUSTOTAL ANALYSIS — lk94.top
+--------------------------------------------------
+
+Detection Ratio:
+0/91 vendors flagged malicious
+
+Registrar:
+Alibaba Cloud Computing Ltd. / HiChina
+
+Creation Timeline:
+7 years old (historical registration data observed)
+
+DNS Records:
+- 172.67.205.141
+- 104.21.90.220
+
+Nameservers:
+- aron.ns.cloudflare.com
+- josh.ns.cloudflare.com
+
+SSL Certificate:
+- Let's Encrypt certificate observed
+- Issuer: E7
+- Subject: CN=lk94.top
+
+Certificate Validity:
+2026-05-13 -> 2026-08-11
+
+Passive DNS Findings:
+- Shared Cloudflare infrastructure detected
+- Historical IP overlap observed
+
+Historical WHOIS Findings:
+- Historical registrar changes identified
+- Historical infrastructure reuse suspected
+
+Community Score:
+0/91
+
+Observations:
+- Domain infrastructure behavior closely matches other campaign domains.
+- Shared Cloudflare infrastructure detected.
+- Similar SSL issuance timing observed.
+- Historical infrastructure reuse indicators identified.
+
+--------------------------------------------------
+CORRELATION FINDINGS
+--------------------------------------------------
+
+Shared Indicators:
+- Cloudflare-backed infrastructure detected across all domains
+- Similar DNS resolution patterns observed
+- Similar SSL issuance timelines detected
+- Shared nameservers repeatedly identified
+- Multiple domains registered or activated on similar dates
+- Similar phishing lure patterns observed
+
+Infrastructure Correlation:
+- Repeated 104.21.x.x IP ranges
+- Repeated 172.67.x.x IP ranges
+- Shared Cloudflare proxy architecture
+- Similar Let's Encrypt SSL certificates
+- Similar passive DNS replication behavior
+
+Technical Assessment:
+The VirusTotal analysis strongly supports the hypothesis of a coordinated financial smishing campaign using rapidly deployed and low-reputation phishing infrastructure.
+
+Risk Level:
+High
+
+Conclusion:
+The analyzed domains exhibit multiple indicators consistent with active phishing infrastructure, including Cloudflare-backed hosting, low-reputation domains, coordinated SSL issuance timing, repeated DNS behavior, and phishing-related detections. Shared operational characteristics strongly suggest coordinated smishing campaign activity.

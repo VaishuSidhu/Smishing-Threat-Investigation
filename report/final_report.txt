@@ -1,0 +1,91 @@
+================================================================================
+TECHNICAL SECURITY INVESTIGATION REPORT
+================================================================================
+Document Title : Incident Investigation: Coordinated Smishing Campaign Analysis
+Incident ID    : INC-2026-0513
+Date of Issue  : May 26, 2026
+Classification : RESTRICTED
+Prepared By    : Threat Intelligence & Incident Response Team
+
+--------------------------------------------------------------------------------
+1. INTRODUCTION & INCIDENT OVERVIEW
+--------------------------------------------------------------------------------
+On May 13, 2026, the Threat Intelligence team identified an active smishing (SMS Phishing) campaign utilizing financial lures to entice victims into visiting newly registered domains. 
+
+The investigation focused on passive threat intelligence and infrastructure mapping for the following suspicious domains:
+- `xm87.xyz`
+- `nd33.xyz`
+- `re13.xyz`
+- `lk94.top`
+
+These domains were bulk-registered within a 12-second window, suggesting automated deployment by a single coordinated actor. The campaign leveraged Cloudflare infrastructure to hide their backend servers, and deployed an HTTP 204 (No Content) response evasion strategy to bypass automated security scanners and security vendors.
+
+--------------------------------------------------------------------------------
+2. ATTACK VECTOR ANALYSIS
+--------------------------------------------------------------------------------
+- **Distribution Channel**: SMS text alerts.
+- **Social Engineering Hooks**:
+  - Financial Lures: Messages claiming fake account credits or urgent financial notifications to trigger victim interaction.
+  - Urgency & Time Pressure: Demands rapid action to access the funds or resolve a simulated alert, reducing rational evaluation by the recipient.
+  - TLD Exploitation: Using cheap or high-volume top-level domains (`.xyz` and `.top`) which are easily rotatable.
+
+- **User Action**: Clicking the link triggers a default browser query, which routes through the Cloudflare proxy and retrieves the payload.
+
+--------------------------------------------------------------------------------
+3. TECHNICAL FORENSIC ANALYSIS
+--------------------------------------------------------------------------------
+The investigation leveraged passive analysis, DNS querying, and OSINT scanning to evaluate the campaign infrastructure.
+
+3.1 Domain Registration & WHOIS Correlation
+- **Registrar**: Spaceship, Inc. (used for all four domains).
+- **Creation Timelines**:
+  - `xm87.xyz`: 2026-05-13 13:04:51 UTC
+  - `lk94.top`: 2026-05-13 13:04:58 UTC
+  - `nd33.xyz`: 2026-05-13 13:05:03 UTC
+  - `re13.xyz`: 2026-05-13 13:05:03 UTC
+  - *Correlation*: The timeline confirms bulk automated registration. The maximum delta between the first and last registration is exactly 12 seconds.
+- **Name Servers**: All domains reuse `aron.ns.cloudflare.com` and `josh.ns.cloudflare.com`.
+
+3.2 DNS Infrastructure
+- **DNS Server**: Internal Gateway DNS (`192.168.1.1`) resolved all domains successfully.
+- **Anycast IP Addresses (Cloudflare)**:
+  - `xm87.xyz` -> `104.21.54.81`, `172.67.136.199`
+  - `nd33.xyz` -> `104.21.43.80`, `172.67.176.244`
+  - `re13.xyz` -> `104.21.26.225`, `172.67.139.121`
+  - `lk94.top` -> `104.21.90.220`, `172.67.205.141`
+- **DNS Metadata**: All domains displayed low TTL values (ranging from 96 to 168 seconds), allowing the threat actor to rapidly update or redirect DNS records.
+
+3.3 HTTP Header & Evasion Strategies
+- **HTTP Response Code**: `HTTP/1.1 204 No Content`
+- **Server Header**: `Server: cloudflare`
+- **Cloudflare Telemetry Headers**: NEL and Report-To header blocks are active.
+- **Analysis Evasion**: Serving an empty HTTP 204 response prevents traditional automated scrapers, sandboxes, and indexing bots from detecting a visual phishing page or downloading files. This indicates conditional payload delivery, where the server redirects only requests that match specific mobile user-agents, carrier IP ranges, or SMS-embedded tracking parameters.
+
+3.4 Threat Intelligence Detections (VirusTotal)
+- **Malicious Detections**:
+  - `xm87.xyz`: Flagged as Phishing by ESET.
+  - `nd33.xyz`, `re13.xyz`, `lk94.top`: 0/91 detections.
+  - *Note*: The lack of general vendor detections highlights the effectiveness of the HTTP 204 evasion strategy and the challenges in detecting freshly deployed infrastructure.
+- **SSL Certificates**: Let's Encrypt certificates issued on May 13, 2026, with a standard 3-month expiration date (`2026-08-11`), aligned across all four domains.
+
+--------------------------------------------------------------------------------
+4. RISK ASSESSMENT & IMPACT
+--------------------------------------------------------------------------------
+- **Information/Credential Theft**: High. A coordinated actor leveraging mobile-targeted lures can harvest banking logins, PII, or secondary authentication mechanisms (OTPs).
+- **Financial Fraud**: High. Credential capture enables fraudulent transactions or account takeovers.
+- **Campaign Longevity**: High. The ability to rapidly rotate disposable domains and hide behind CDN proxies makes infrastructure highly resilient to simple domain blocking.
+
+--------------------------------------------------------------------------------
+5. MITIGATION ACTIONS COMPLETED
+--------------------------------------------------------------------------------
+- **Internal Action**:
+  - Deployed wildcard blocklist entries in secure gateways for `*.xyz` and `*.top` domains matching newly registered metrics.
+  - Blocked DNS queries for the four malicious domains on corporate servers.
+  - Configured alerts to flag outbound web connections returning HTTP 204 status codes to Cloudflare destinations for suspicious domains.
+
+- **External Action**:
+  - Filed abuse notices with Spaceship, Inc. (domain suspension).
+  - Filed malicious hosting reports with Cloudflare to disable proxying.
+  - Shared IOC details with sector threat intelligence sharing groups.
+================================================================================
+

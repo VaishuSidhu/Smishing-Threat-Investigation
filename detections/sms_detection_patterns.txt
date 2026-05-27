@@ -1,0 +1,14 @@
+# SMS Lure Regex Detection Patterns
+# Use these regex strings in SMS gateway filters or MDM screening systems.
+
+# Pattern 1: Detect urgencies/credits combined with cheap TLD hyperlinks (generic)
+# Matches: "Your account is credited, claim at https://site.xyz" or "Pending payment verification: http://site.top"
+(?i)\b(credited|payment|deposit|cash|claim|verification|verify|action required|suspended|locked|alert)\b.*\bhttps?:\/\/[a-z0-9-]+\.(xyz|top|site|online)\b
+
+# Pattern 2: Detect references to the specific indicators found in this campaign
+# Matches: any SMS containing references to the domains: xm87, nd33, re13, lk94
+(?i)\b(xm87|nd33|re13|lk94)\b.*\.(xyz|top)
+
+# Pattern 3: Financial lures targeting virtual headers
+# Matches messages starting with fake bank-related headers directing users to click web links
+(?i)^(account|credit|bank|alert|card).*(click|visit|update|check|link|url).*https?:\/\/
